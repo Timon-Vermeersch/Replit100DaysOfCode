@@ -17,7 +17,7 @@ VALUES(?, ?, ?)"""
 # );
 # '''
 
-
+# rwar
 #db_cursor.execute(create_table_sql)
 select_sql = "SELECT * FROM students "
 db_cursor.execute(select_sql) 
