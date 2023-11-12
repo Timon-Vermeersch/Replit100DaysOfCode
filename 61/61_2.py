@@ -22,14 +22,27 @@ def add_tweet(cursor, tweet):
     return tweet
 
 def view_tweets(cursor):
-    print()
-    cursor.execute(f"{SELECT_SQL}LIMIT 10")
-    rows = cursor.fetchall()
-    for row in rows:
-        print()
-        for item in row:
-            print(item, end=" ")
-    print("")
+    offset= 0
+    while offset >= 0:
+            print()
+            cursor.execute(f"{SELECT_SQL}LIMIT 10 OFFSET {offset}")
+            rows = cursor.fetchall()
+            for row in rows:
+                print("\n")
+                for item in row:
+                    print(item, end=" ")
+
+            offsetincrease= input("\nq to go to menu, '+' for show nxt 10 tweets '-' for show previous 10 tweets\n:  ")
+            if offsetincrease == "+":
+                offset += 10
+            else:
+                offset-= 10
+
+            if offsetincrease == "q":
+                break
+            
+            print("")
+
 
 if __name__ == "__main__":
     connection, db_cursor = connect_to_database()
