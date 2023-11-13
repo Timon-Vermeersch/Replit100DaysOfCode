@@ -1,13 +1,15 @@
 import time
-num = int(input("type int: "))
 
-def countBackWards(num):
+
+def countBackwards(num):
     if num <= 0:
         print("done bish")
     else:
         for i in range(num):
             print("💯", end = "")
         print()
-        countBackWards(num-1)
+        countBackwards(num-1)
 
-countBackWards(num)
+if __name__ == "__main__": 
+    num = int(input("type int: "))
+    countBackwards(num)
