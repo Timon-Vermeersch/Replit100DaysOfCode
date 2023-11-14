@@ -42,13 +42,13 @@ class Teacher(Job):
 
 
 
+while __name__ == "__main__":
+    geerje = Doctor("Dokter",10000,48,10,"cardio")
+    sara = Teacher("Leerkracht",500,56,"Planner/Teacher","economie")
+    sybe = Job("Advocaat", 2000,20,)
 
-geerje = Doctor("Dokter",10000,48,10,"cardio")
-sara = Teacher("Leerkracht",500,56,"Planner/Teacher","economie")
-sybe = Job("Advocaat", 2000,20,)
-
-geerje.dokterPrint()
-sara.teacherPrint()
-sybe.jobPrint()
+    geerje.dokterPrint()
+    sara.teacherPrint()
+    sybe.jobPrint()
 
 
