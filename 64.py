@@ -1,20 +1,27 @@
-import time
-import numpy as np
+class animal: 
+    species = None
+    name = None 
+    sound = None
 
-N = 4069
+    def __init__(self,name,species,sound):
+        self.name = name
+        self.species = species
+        self.sound = sound
 
-if __name__ == "__main__":
-    A = np.random.randn(N,N).astype(np.float32)
-    B = np.random.randn(N,N).astype(np.float32)\
+    def talk(self):
+        print(f"""{self.name} says {self.sound}""")
+
+class bird(animal):
+    color = None
+    def __init__(self,color):
+        self.name = "Bird"
+        self.species = "Avian"
+        self.sound = "Tweet"
     
-    flop = N*N*N*2
-    print(f"{flop / 1e9:.2f}Gflop")
 
 
-
-    st = time.monotonic()
-    C = A@B
-    et = time.monotonic()
-    s = et-st
-
-    print(f"{flop/s * 1e-9:.2f}Gflops")
+dog = animal("dog","Canine","woof")
+print(dog.name)
+dog.talk()
+polly = bird("Green")
+polly.talk()
