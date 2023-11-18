@@ -26,39 +26,72 @@ displayNumber.grid(row = 0, column= 1)
 # #enter text
 # text = tk.Text(window, height = 4, width = 25)
 # text.grid(row = 0, column= 4)
-currentNumberList = []
+
 currentTotal = 0
 currentNumber = "" 
 
 
 def assignInput(numberpressed):
     global currentTotal,currentNumber
-    if numberpressed in [1,2,3,4,5,6,7,8,9,0]:
-        currentNumber += str(numberpressed)
-        print(currentNumber)
-    elif assignInput == "+":
-        plus = []
-        print(currentTotal)
-        
+    currentNumber += str(numberpressed)
+    displayNumber["text"]  = currentNumber
+    print(currentNumber)
+def calculate():
+    global currentNumber
+    calculated = eval(currentNumber)
+    print(calculated)
+    displayNumber["text"]  = calculated
+def clear ():
+    global currentNumber
+    currentNumber = "" 
+    displayNumber["text"]  = currentNumber
+def backspace ():
+    global currentNumber
+
+    currentNumber = currentNumber[:-1]
+    displayNumber["text"]  = currentNumber
+    print(currentNumber)
 
 #nummersknoppen
-button7 = tk.Button(text = "7",command=lambda : assignInput(7), width=4, height=2).grid(row = 1, column= 0)
-button8 = tk.Button(text = "8",command=lambda : assignInput(8), width=4, height=2).grid(row = 1, column= 1)
-button9 = tk.Button(text = "9",command=lambda: assignInput(9), width=4, height=2).grid(row = 1, column= 2)
-button4 = tk.Button(text = "4",command=lambda: assignInput(4), width=4, height=2).grid(row = 2, column= 0)
-button5 = tk.Button(text = "5",command=lambda: assignInput(5), width=4, height=2).grid(row = 2, column= 1)
-button6 = tk.Button(text = "6",command=lambda: assignInput(6), width=4, height=2).grid(row = 2, column= 2)
-button1 = tk.Button(text = "1",command=lambda: assignInput(1), width=4, height=2).grid(row = 3, column= 0)
-button2 = tk.Button(text = "2",command=lambda: assignInput(2), width=4, height=2).grid(row = 3, column= 1)
-button3 = tk.Button(text = "3",command=lambda: assignInput(3), width=4, height=2).grid(row = 3, column= 2)
-button0 = tk.Button(text = "0",command=lambda: assignInput(0), width=4, height=2).grid(row = 4, column= 1)
+button7 = tk.Button(text = "7",command=lambda : assignInput(7), width=4, height=2)
+button7.grid(row = 1, column= 0, sticky="nsew")
+button8 = tk.Button(text = "8",command=lambda : assignInput(8), width=4, height=2)
+button8.grid(row = 1, column= 1, sticky="nsew")
+button9 = tk.Button(text = "9",command=lambda: assignInput(9), width=4, height=2)
+button9.grid(row = 1, column= 2, sticky="nsew")
+button4 = tk.Button(text = "4",command=lambda: assignInput(4), width=4, height=2)
+button4.grid(row = 2, column= 0, sticky="nsew")
+button5 = tk.Button(text = "5",command=lambda: assignInput(5), width=4, height=2)
+button5.grid(row = 2, column= 1, sticky="nsew")
+button6 = tk.Button(text = "6",command=lambda: assignInput(6), width=4, height=2)
+button6.grid(row = 2, column= 2, sticky="nsew")
+button1 = tk.Button(text = "1",command=lambda: assignInput(1), width=4, height=2)
+button1.grid(row = 3, column= 0, sticky="nsew")
+button2 = tk.Button(text = "2",command=lambda: assignInput(2), width=4, height=2)
+button2.grid(row = 3, column= 1, sticky="nsew")
+button3 = tk.Button(text = "3",command=lambda: assignInput(3), width=4, height=2)
+button3.grid(row = 3, column= 2, sticky="nsew")
+button0 = tk.Button(text = "0",command=lambda: assignInput(0), width=4, height=2)
+button0.grid(row = 4, column= 1, sticky="nsew")
 #operatorknoppen
-button_plus = tk.Button(text = "+",command=lambda: assignInput("+"), width=4, height=2).grid(row = 1, column= 3)
-button_minus = tk.Button(text = "-",command=lambda: assignInput("-"), width=4, height=2).grid(row = 1, column= 4)
-button_times = tk.Button(text = "x",command=lambda: assignInput("*"), width=4, height=2).grid(row = 2, column= 3)
-button_divide = tk.Button(text = "/",command=lambda: assignInput("/"), width=4, height=2).grid(row = 2, column= 4)
+button_plus = tk.Button(text = "+",command=lambda: assignInput("+"), width=4, height=2)
+button_plus.grid(row = 1, column= 3, sticky="nsew")
+button_minus = tk.Button(text = "-",command=lambda: assignInput("-"), width=4, height=2)
+button_minus.grid(row = 1, column= 4, sticky="nsew")
+button_times = tk.Button(text = "x",command=lambda: assignInput("*"), width=4, height=2)
+button_times.grid(row = 2, column= 3, sticky="nsew")
+button_divide = tk.Button(text = "/",command=lambda: assignInput("/"), width=4, height=2)
+button_divide.grid(row = 2, column= 4, sticky="nsew")
 #knopforcalculate
-button_equals = tk.Button(text = "=",command=lambda: assignInput("="), width=4, height=2).grid(row = 3, column= 4)
+button_equals = tk.Button(text = "=",command= calculate, width=4, height=2)
+button_equals.grid(row = 5, column= 4, sticky="nsew")
+#knopforclear
+button_clear = tk.Button(text = "c", command = clear , width  = 4, height = 2)
+button_clear.grid(row = 4, column = 4, sticky="nsew")
+#knoforbackspace 
+button_backspace = tk.Button(text = "<-", command = backspace , width  = 4, height = 2)
+button_backspace.grid(row = 3, column = 4, sticky="nsew")
+
 
 #mainloop
 tk.mainloop()
