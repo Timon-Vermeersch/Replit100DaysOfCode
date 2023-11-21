@@ -13,11 +13,11 @@ window.geometry("190x230")
     
 
 
-    #number = text.get("1.0","end")
-    #number = int(number)
-    #printVar += number
-    #hello["text"] = printVar
-    
+    # number = text.get("1.0","end")
+    # number = int(number)
+    # printVar += number
+    # hello["text"] = printVar
+        
 #label
 printVar = 0
 displayNumber = tk.Label(text = printVar)
