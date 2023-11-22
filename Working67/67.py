@@ -15,7 +15,7 @@ if __name__ == "__main__":
                 
     def selectimage():
 
-        
+        canvas.delete("all")
         choiceInputText = choiceInput.get("1.0","end-1c").strip().lower()
         check = choices.get(choiceInputText)
         
@@ -54,6 +54,8 @@ if __name__ == "__main__":
 
     zero = Image.open(os.path.join(os.path.dirname(__file__), r"Zero.jpeg"))
     zero = ImageTk.PhotoImage(zero)
+
+
     choices = {"asuna": asuna,"misato" : misato , "sakuya": sakuya, "seras" : seras ,"yoru" : yoru, "zero" : zero}
 
 
