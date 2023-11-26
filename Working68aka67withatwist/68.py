@@ -21,9 +21,11 @@ if __name__ == "__main__":
         check = choices.get(choiceInputText)
         
         if check != None: 
+            labelNotFound.pack_forget()
             canvas.create_image(0,0,anchor = "nw", image = check)
         else:
-            on_click()
+            canvas.pack_forget()
+            labelNotFound.pack()
         
     def hideImage():
         global hideOn
@@ -51,6 +53,8 @@ if __name__ == "__main__":
 #createcanvas
     canvas = tk.Canvas(window, height=900 , width = 600)
     canvas.pack()
+#labelNotFound
+    labelNotFound = tk.Label(text = "not found")
 
 
 #createimages
