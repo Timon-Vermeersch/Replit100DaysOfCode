@@ -2,6 +2,7 @@ from tkinter import messagebox
 import tkinter as tk
 from PIL import Image, ImageTk
 import os
+hideOn = True 
 if __name__ == "__main__":
     script_directory = os.path.dirname(os.path.abspath(__file__))
     print(f" \u001b[31m {os.path.dirname}\u001b[37m")
@@ -23,8 +24,19 @@ if __name__ == "__main__":
             canvas.create_image(0,0,anchor = "nw", image = check)
         else:
             on_click()
-            
-            
+        
+    def hideImage():
+        global hideOn
+        if hideOn:
+            canvas.pack_forget()
+            hideOn = False
+
+        elif hideOn == False:
+            choiceInput.pack()
+            button.pack()
+            button_hide.pack()
+            canvas.pack()
+            hideOn = True
             
     
 #inputkader
@@ -33,9 +45,14 @@ if __name__ == "__main__":
 #createButton
     button = tk.Button(text="Seek!!", command =  selectimage)
     button.pack()
+#hidebutton
+    button_hide = tk.Button(text="Hide image", command =  hideImage)
+    button_hide.pack()
 #createcanvas
     canvas = tk.Canvas(window, height=900 , width = 600)
     canvas.pack()
+
+
 #createimages
     asuna = Image.open(r"C:\Users\timon\Documents\shitcoding\Replit\Working67\Asuna.jpeg")
     asuna = ImageTk.PhotoImage(asuna)
