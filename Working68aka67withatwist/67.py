@@ -9,16 +9,18 @@ if __name__ == "__main__":
     window.title("Timon's waifu selector")
     window.geometry("600x1000")
 
-    choices = ["asuna", "misato" , "sakuya" , "seras" , "yoru", "zero"]
+    
     def on_click():
         messagebox.showerror('Python Error', 'Person not in list')
                 
     def selectimage():
-        #global choices,misato
-        choiceInputText = choiceInput.get("1.0","end-1c")
-        if choiceInputText in choices:
-            currentPhoto = choiceInputText
-            print(f"{currentPhoto}")
+
+        canvas.delete("all")
+        choiceInputText = choiceInput.get("1.0","end-1c").strip().lower()
+        check = choices.get(choiceInputText)
+        
+        if check != None: 
+            canvas.create_image(0,0,anchor = "nw", image = check)
         else:
             on_click()
             
@@ -53,9 +55,15 @@ if __name__ == "__main__":
     zero = Image.open(os.path.join(os.path.dirname(__file__), r"Zero.jpeg"))
     zero = ImageTk.PhotoImage(zero)
 
-    currentPhoto = ""
-    
+
+    choices = {"asuna": asuna,"misato" : misato , "sakuya": sakuya, "seras" : seras ,"yoru" : yoru, "zero" : zero}
+
+
+    currentPhoto = zero
+
     print(f"{currentPhoto}")
+
+
     selectedPhoto = canvas.create_image(0,0,anchor = "nw",image = currentPhoto )
 
     
