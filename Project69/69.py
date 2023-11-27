@@ -8,7 +8,7 @@ if __name__ == "__main__":
     print(f" \u001b[31m {os.path.dirname}\u001b[37m")
     window = tk.Tk()
     window.title("TifaVisualNovel")
-    window.geometry("700x700")
+    window.geometry("550x600")
     canvas = tk.Canvas(window, height=520 , width = 525)
 
     #createImages
@@ -111,7 +111,7 @@ if __name__ == "__main__":
             widget.destroy()
         canvas = tk.Canvas(window, height=520, width=525)
         canvas.pack()
-        label = tk.Label(window, text="Tifa whips out her osu tablet")
+        label = tk.Label(window, text="Tifa whips out her osu tablet and shows you her usable area!")
         label.pack()
         selectedPhoto = canvas.create_image(10, 0, anchor="nw", image=tifatablet)
         button = tk.Button(window, text=">What?! You play with tablet? That's so cool!!", command=start2_1_1)
