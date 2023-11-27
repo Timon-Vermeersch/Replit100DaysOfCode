@@ -1,7 +1,6 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 import os
-import time
 
 
 if __name__ == "__main__":
@@ -10,10 +9,8 @@ if __name__ == "__main__":
     window = tk.Tk()
     window.title("TifaVisualNovel")
     window.geometry("700x700")
-
     canvas = tk.Canvas(window, height=520 , width = 525)
-    
-    
+
     #createImages
     tifabanana = Image.open(os.path.join(os.path.dirname(__file__), r"tifabanana.jpeg"))
     tifabanana = ImageTk.PhotoImage(tifabanana)
@@ -37,7 +34,6 @@ if __name__ == "__main__":
     tifausb = Image.open(os.path.join(os.path.dirname(__file__), r"tifausb.jpeg"))
     tifausb = ImageTk.PhotoImage(tifausb)
 
-    
     def start():
         global selectedPhoto
         for widget in window.winfo_children():
@@ -66,8 +62,6 @@ if __name__ == "__main__":
         button2 = tk.Button(window, text=">Damn Tifa! That is one BIG laptop!", command=banana)
         button2.pack()
     
-
-
     def start1_1():
         global selectedPhoto, canvas, window
         for widget in window.winfo_children():
@@ -81,8 +75,7 @@ if __name__ == "__main__":
         label1.pack()
         button = tk.Button(window, text=">Restart!", command=start)
         button.pack()
-
-
+ 
     def banana():
         global selectedPhoto, canvas, window
         for widget in window.winfo_children():
@@ -96,6 +89,7 @@ if __name__ == "__main__":
         label1.pack()
         button = tk.Button(window, text=">Restart!", command=start)
         button.pack()
+   
     def banana2():
 
         global selectedPhoto, canvas, window
@@ -109,8 +103,8 @@ if __name__ == "__main__":
         label1 = tk.Label(window, text="The end")
         label1.pack()
         button = tk.Button(window, text=">Restart!", command=start)
-        button.pack()
-        
+        button.pack()  
+    
     def start2_1():
         global selectedPhoto, canvas, window
         for widget in window.winfo_children():
@@ -124,6 +118,7 @@ if __name__ == "__main__":
         button.pack()
         button2 = tk.Button(window, text=">Mouse??? Wtf are you gay?", command=banana2)
         button2.pack()
+    
     def start2_1_1():
         global selectedPhoto, canvas, window
         for widget in window.winfo_children():
@@ -137,7 +132,6 @@ if __name__ == "__main__":
         label1.pack()
         button = tk.Button(window, text=">Restart!", command=start)
         button.pack()
-
 
     canvas.pack()
     start()
