@@ -82,7 +82,7 @@ if __name__ == "__main__":
             widget.destroy()
         canvas = tk.Canvas(window, height=520, width=525)
         canvas.pack()
-        label = tk.Label(window, text="Tifa smirks whips out her banana and PUNCHES you with it")
+        label = tk.Label(window, text="Tifa smirks, pulls out a banana from her pockets, and PUNCHES you with it!")
         label.pack()
         selectedPhoto = canvas.create_image(10, 0, anchor="nw", image=tifabanana)
         label1 = tk.Label(window, text="The end")
