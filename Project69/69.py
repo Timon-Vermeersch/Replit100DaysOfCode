@@ -24,7 +24,6 @@ if __name__ == "__main__":
     tifahall = Image.open(os.path.join(os.path.dirname(__file__), r"tifahall.jpeg"))
     tifahall = ImageTk.PhotoImage(tifahall)
 
-
     tifalaptop = Image.open(os.path.join(os.path.dirname(__file__), r"tifalaptop.jpeg"))
     tifalaptop = ImageTk.PhotoImage(tifalaptop)
 
@@ -44,9 +43,10 @@ if __name__ == "__main__":
         label.pack()
         selectedPhoto = canvas.create_image(10,0,anchor = "nw",image = tifahall )
         button = tk.Button(text=">Hello Tifa! whats ur highest pp play?", command =  start1)
-        button.pack()
+        button.pack(fill=tk.X, padx=10, pady=0)
+
         button2 = tk.Button(text=">Hello Tifa! Do you play tablet or mouse???", command =  start2_1)
-        button2.pack()
+        button2.pack(fill=tk.X, padx=10, pady=0)
 
     def start1():
         global selectedPhoto, canvas, window
@@ -58,9 +58,9 @@ if __name__ == "__main__":
         label.pack()
         selectedPhoto = canvas.create_image(10, 0, anchor="nw", image=tifalaptop)
         button = tk.Button(window, text=">Yo what?! that's a cool laptop!", command=start1_1)
-        button.pack()
+        button.pack(fill=tk.X, padx=10, pady=0)
         button2 = tk.Button(window, text=">Damn Tifa! That is one BIG laptop!", command=banana)
-        button2.pack()
+        button2.pack(fill=tk.X, padx=10, pady=0)
     
     def start1_1():
         global selectedPhoto, canvas, window
@@ -74,7 +74,7 @@ if __name__ == "__main__":
         label1 = tk.Label(window, text="The end")
         label1.pack()
         button = tk.Button(window, text=">Restart!", command=start)
-        button.pack()
+        button.pack(fill=tk.X, padx=10, pady=0)
  
     def banana():
         global selectedPhoto, canvas, window
@@ -88,7 +88,7 @@ if __name__ == "__main__":
         label1 = tk.Label(window, text="The end")
         label1.pack()
         button = tk.Button(window, text=">Restart!", command=start)
-        button.pack()
+        button.pack(fill=tk.X, padx=10, pady=0)
    
     def banana2():
 
@@ -97,13 +97,13 @@ if __name__ == "__main__":
             widget.destroy()
         canvas = tk.Canvas(window, height=520, width=525)
         canvas.pack()
-        label = tk.Label(window, text="'She whips out a banana and punches you in the face. ")
+        label = tk.Label(window, text="'She whips out a banana, and PUNCHES you in the face. ")
         label.pack()
         selectedPhoto = canvas.create_image(10, 0, anchor="nw", image=tifabanana2)
         label1 = tk.Label(window, text="The end")
         label1.pack()
         button = tk.Button(window, text=">Restart!", command=start)
-        button.pack()  
+        button.pack(fill=tk.X, padx=10, pady=0)  
     
     def start2_1():
         global selectedPhoto, canvas, window
@@ -115,9 +115,9 @@ if __name__ == "__main__":
         label.pack()
         selectedPhoto = canvas.create_image(10, 0, anchor="nw", image=tifatablet)
         button = tk.Button(window, text=">What?! You play with tablet? That's so cool!!", command=start2_1_1)
-        button.pack()
-        button2 = tk.Button(window, text=">Mouse??? Wtf are you gay?", command=banana2)
-        button2.pack()
+        button.pack(fill=tk.X, padx=10, pady=0)
+        button2 = tk.Button(window, text=">Mouse??? Wtf are you MAD?", command=banana2)
+        button2.pack(button2.pack(fill=tk.X, padx=10, pady=0))
     
     def start2_1_1():
         global selectedPhoto, canvas, window
@@ -131,7 +131,7 @@ if __name__ == "__main__":
         label1 = tk.Label(window, text="The end")
         label1.pack()
         button = tk.Button(window, text=">Restart!", command=start)
-        button.pack()
+        button.pack(fill=tk.X, padx=10, pady=0)
 
     canvas.pack()
     start()
