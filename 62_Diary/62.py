@@ -67,7 +67,8 @@ def view_diary(cursor):
 
 
 if __name__ == "__main__":
-    connection , cursor = connect_to_database()
+    connection = connect_to_database()
+    cursor = connect_to_database()
     os.system("cls")
     if checkpw():
         print("Access granted!")
