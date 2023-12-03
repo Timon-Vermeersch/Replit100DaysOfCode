@@ -21,7 +21,6 @@ def connect_to_database():
     cursor = connection.cursor()
     return connection, cursor
 
-
 def checkUserExistence(uname):
     viewhashSQL = f"SELECT hashedPw,Salt FROM definitlynotpasswords where userId = '{uname}'"
     
@@ -52,7 +51,6 @@ def checkUserExistence(uname):
 
     else:
         print("notfound")
-
 
 def addUser(cursor):
     print("--Adding new user--")
