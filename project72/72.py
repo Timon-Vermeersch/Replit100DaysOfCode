@@ -124,6 +124,9 @@ def menu():
                 add_entry(cursor,entryText)
             elif menu == "2":
                 view_diary(cursor)
+            elif menu == "q":
+                 connection.close()
+                 quit()
 
 if __name__ == "__main__":
     connection,cursor = connect_to_database()
