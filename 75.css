@@ -1,0 +1,31 @@
+html{
+    background-color: #808080; 
+    color: #ffffff; 
+    padding: 20px; 
+    height: 100%;
+    width: 100%;
+    font-family:'Courier New', Courier, monospace;
+    height: 100vh;
+}
+
+a{
+    color: pink;
+}
+img,a,h1,h2,ul,h3{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    
+}
+ul {
+    padding-left: 0;
+    list-style-position: inside;
+  }
+  h2,ul {
+    margin: 0%
+}
+
+.xdxp{
+    color: #a45a9d;
+}
