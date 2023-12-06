@@ -34,3 +34,6 @@ ul {
     margin-top: 10px;
     color: #FFD9E8;
 }
+.divider {
+    width: 10px; /* Adjust the width of the divider as needed */
+    background-color: #b09393; /* Adjust the color of the divider as needed */}
