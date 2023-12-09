@@ -1,3 +1,4 @@
+#https://www.youtube.com/watch?v=_NlKiYFMEdg&list=PLto9KpJAqHMQNY3XP0JqLs7NyeU_dnNj0&index=137&pp=iAQB
 from flask import Flask
 from flask import request
 
@@ -7,12 +8,14 @@ app = Flask(__name__)
 def process():
     page = ""
     form = request.form
-    if form["kleur"] == "rood":
-        page+= "You picked Red"
-    elif form["kleur"] == "blauw":
-        page+= "You picked blauw"
-    elif form["kleur"] == "groen":
-        page+= f"You picked {form['kleur']}"
+    if form["username"] == "Timon" and form["password"] == "timon":
+        page+= "Hello dud"
+    elif form["username"] == "Female" and form["password"] == "female":
+        page+= "Hello fem"
+    elif form["username"] == "Nonb" and form["password"] == "nonb":
+        page+= "Hello x"
+    else:
+        page+= "please GTFO"
     return page
 
 @app.route('/index')
@@ -39,13 +42,7 @@ def index():
 
                     <input type="hidden" name="userID" value="232">
 
-                <p>Fav Color: <select name="kleur" id="test">  DROPDOWN MENU
-                                    <option value="rood">rood</option>
-                                    <option value="blauw">blauw</option>
-                                    <option value="groen">groen</option>
-                             </select></p> 
-
-
+            
                 <button type="submit">Login</button>
 
     </form>
