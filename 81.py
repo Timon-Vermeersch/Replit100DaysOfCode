@@ -8,21 +8,38 @@ app = Flask(__name__)
 
 def process():
     robot = "You are a robby botto"
-    page = ""
+    page = "Welcome human"
     form = request.form
-    if form["youRobot?"] == "on":
-        page += robot
-    elif form["youRobot?"] == None:
-        pass
-    elif form["favFood"] == "sf":
-        page += robot
-    elif "error" in form["inf?"]:
-        page += robot
-    else:
-        page += "welcome human"
     
-    #return page
-    return request.form
+    print("Keys in form:", form.keys(),list(form.values()))  
+    
+    # if form["youRobot?"] == "on":
+    #     print("FOUND A FKN ROBOT")
+    #     return 'found robot'
+    
+    # elif 'youRobot?' not in form.keys():
+    #     print("NOT A FKN ROBOT")
+    #     return "Not a robot"
+
+    # if 'youRobot?' not in form.keys():
+    #     print("NOT A FKN ROBOT")
+    
+    try:
+        if form["youRobot?"] == "on":
+            print("FOUND A FKN ROBOT")
+            page = robot
+            
+    except: 
+          print("youRobot not present")
+
+    if form["favFood"] == "sf":
+            page = robot
+    
+
+    if "error" in form["inf?"]:
+            page = robot
+    
+    return page
 
 @app.route('/')
 def index():
