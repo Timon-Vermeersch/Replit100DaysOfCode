@@ -8,7 +8,7 @@ import datetime,os
 app = Flask(__name__,static_url_path="/static")
 datum = f"{datetime.date.today()}"
 
-@app.route('/', methods = ['GET'])
+@app.route('/', methods = ['GET','POST'])
 def home():
 
     greeting = "hallo"
