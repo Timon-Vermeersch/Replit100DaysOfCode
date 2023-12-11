@@ -8,7 +8,7 @@ import hashlib
 ##for future: sqlite3 MyFirstDatabase.db "CREATE TABLE diary (date TEXT PRIMARY KEY, entry TEXT NOT NULL);"
 
 TABLE_NAME = "definitlynotpasswords"
-SELECT_SQL = f"SELECT * FROM {TABLE_NAME} "
+SELECT_SQL = f"SELECT * FROM {TABLE_NAME}"
 
 INSERT_SQL = f"""INSERT INTO {TABLE_NAME}(UserId, Salt, HashedPw)
                  VALUES(?, ?, ?)"""
