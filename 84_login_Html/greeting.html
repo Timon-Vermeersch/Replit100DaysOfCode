@@ -13,13 +13,5 @@
 <body>
     <p><a href="/login">Login</a></p>
     <p><a href="/signup">Sign-up</a></p>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <ul class=flashes>
-        {% for message in messages %}
-            <li>{{ message }}</li>
-        {% endfor %}
-        </ul>
-    {% endif %}
-{% endwith %}
+
 </body>
