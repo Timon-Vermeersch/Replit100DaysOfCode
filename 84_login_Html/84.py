@@ -1,4 +1,4 @@
-#https://www.youtube.com/watch?v=g5JOQvR8xUE
+#https://www.youtube.com/watch?v=g5JOQvR8xUE&list=PLto9KpJAqHMQNY3XP0JqLs7NyeU_dnNj0&index=151
 ##for future: sqlite3 MyFirstDatabase.db "CREATE TABLE diary (date TEXT PRIMARY KEY, entry TEXT NOT NULL);"
 from flask import Flask, request, redirect,flash,render_template
 import sqlite3 as sq
@@ -73,15 +73,7 @@ def processLogin():
         else: return redirect("/gtfo")
     except:
         return("Username prolly not found")
-    
-    
-    
 
-
-
-    data = username + wachtwoord
-    
-    return f"Welcome {username}"
 @app.route("/welcome")
 def welcome():
     f = open("84_login_Html\welcome.html" , 'r' , encoding= "utf-8")
