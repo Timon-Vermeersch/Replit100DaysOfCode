@@ -14,16 +14,23 @@ def index():
     page = ""
     myName = ''
     if session.get("myName"):
+        print('sessionfound')
         myName = session["myName"]
-    page += f"<h1>{myName}</h1>"
+    page += f"<h1>{myName}</h1>"    
     f = open("form.html" , 'r')
-    page = f.read()
+    page += f.read()
+    
     f.close()
     return page
 @app.route('/push' , methods=["POST"])
 def setName():
     session["myName"] = request.form["name"]
     return redirect("/")
+    
+@app.route("/reset")
+def reset():
+    session.clear()
+    return redirect('/')
 
 app.run(host = '0.0.0.0' , port = 81)
 
