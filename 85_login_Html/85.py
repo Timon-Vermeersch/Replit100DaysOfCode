@@ -1,4 +1,4 @@
-#https://www.youtube.com/watch?v=g5JOQvR8xUE&list=PLto9KpJAqHMQNY3XP0JqLs7NyeU_dnNj0&index=151
+#https://www.youtube.com/watch?v=YxmZOQ6rG7g&list=PLto9KpJAqHMQNY3XP0JqLs7NyeU_dnNj0&index=164
 ##for future: sqlite3 MyFirstDatabase.db "CREATE TABLE diary (date TEXT PRIMARY KEY, entry TEXT NOT NULL);"
 from flask import Flask, request, redirect,flash,render_template, session
 import sqlite3 as sq
@@ -28,7 +28,7 @@ app.secret_key = os.environ['sessionKey']
 def index():
     f = open("84_login_Html\greeting.html" , 'r' , encoding = "utf-8")
     page = f.read()
-    f.close
+    f.close()
     myName = ''
     if session.get("myName"):
         print('sessionfound')
@@ -119,4 +119,4 @@ def reset():
 
 
 
-app.run(host = '0.0.0.0', port = 81)
+app.run(host = '0.0.0.0', port = 3001)
