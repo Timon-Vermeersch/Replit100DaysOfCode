@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #50b3a2;
+            color: white;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+        header li {
+            display: inline;
+            margin: 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header .highlight, header .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+        article {
+            padding: 20px;
+            background: white;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            color: #ffffff;
+            background-color: #e8491d;
+            text-align: center;
+        }
+        #post-form {
+            margin: 20px 0;
+            margin-top: 0;
+        }
+
+        #post-form form {
+            background: #5f5d5d;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        #post-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #post-form input[type="text"],
+        #post-form textarea {
+            width: 100%; /* Full width */
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        #post-form input[type="submit"] {
+            display: block;
+            width: auto; /* Auto-width based on content */
+            padding: 10px 20px;
+            background: #50b3a2;
+            color: rgb(255, 255, 255);
+            border: 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+
+        #post-form input[type="submit"]:hover {
+            background: #429188; /* Darker background on hover */
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">My</span> Blog</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="/index">Home</a></li>
+                    <li><a href="/reset">About</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li>{guest}</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="post-form">
+        <form action="/submit" method="post">
+          <label for="post-title">Title:</label>
+          <input type="text" id="post-title" name="title" required>
+      
+          <label for="post-content">Content:</label>
+          <textarea id="post-content" name="content" rows="4" required></textarea>
+      
+          <input type="submit" value="Submit Post">
+        </form>
+      </div>
+
+    <div class="container">
+{articles}
+    </div>
+
+    <footer>
+        <p>My Blog &copy; 2023</p>
+    </footer>
+</body>
+</html>
