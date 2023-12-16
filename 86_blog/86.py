@@ -39,7 +39,7 @@ def index():
     cursor.execute(f"SELECT title, content, date, author FROM {TABLE_NAME};")
     count_result = cursor.fetchall()
     articles_html = ''
-    for thing in count_result:
+    for thing in reversed(count_result):
         articles_html += f"""<article>
             <h2>{thing[0]}</h2>
             <p>{thing[1]}</p>
