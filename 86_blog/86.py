@@ -1,3 +1,4 @@
+#https://www.youtube.com/watch?v=BnM1TC39qgM&list=PLto9KpJAqHMQNY3XP0JqLs7NyeU_dnNj0&index=156
 from flask import Flask, request, redirect, session
 import sqlite3 as sq
 import dotenv
@@ -106,17 +107,6 @@ def submitPost():
 @app.route("/reset")
 def reset():
     session.clear()
-    return redirect('/') 
-
-    
-
-
-
-
-
-
-
-
-
+    return redirect('/')
 
 app.run(host = '0.0.0.0', port = 3001)
