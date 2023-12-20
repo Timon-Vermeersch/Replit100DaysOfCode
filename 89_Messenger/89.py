@@ -5,17 +5,19 @@ import os,dotenv,datetime
 import sqlite3 as sq
 
 
+
 TABLE_NAME_USER = "Users"
 SELECT_SQL_USER = f"SELECT * FROM {TABLE_NAME_USER}"
 INSERT_SQL_USER = f"""INSERT INTO {TABLE_NAME_USER}(user, password)
                  VALUES(?, ?)"""
+
 
 TABLE_NAME = "Messages"
 SELECT_SQL = f"SELECT * FROM {TABLE_NAME}"
 INSERT_SQL = f"""INSERT INTO {TABLE_NAME}(number, message, author, time)
                  VALUES(?, ?, ?, ?)"""
 
-local_db_path = r"89_Messenger\Messenger.db"
+local_db_path = r"86_blog\blog.db"
 dotenv_path = ".devcontainer/devcontainer.env"
 dotenv.load_dotenv(dotenv_path)
 
