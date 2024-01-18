@@ -1,0 +1,97 @@
+html{
+   
+    font-family:'Courier New', Courier, monospace;
+    
+}
+a {
+    text-decoration: none;
+}
+
+body {
+    padding-left: 0;
+    background-color: rgb(151, 203, 222);
+    margin: 0;
+    height: 100dvh;
+    display: flex;
+    overflow: hidden;
+}
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 0.1rem;
+    border-bottom: 1px solid black;
+    gap: 0.5rem;
+    justify-content: space-between;
+    
+}
+.chat-containter
+{
+    
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.message:first-child {
+    margin-top: auto; /* Pushes the first message to the bottom */
+}
+.chat-footer{
+    
+    display: flex;
+    box-shadow: 0px -5px 15px rgba(22, 82, 211, 0.2), 
+                0px 5px 15px rgba(22, 82, 211, 0.2);
+    
+
+
+    border-top: 0.5px solid black;
+    border-bottom: 0.5px solid black;
+    border-left:  0.5px solid black;   
+    padding: 1rem;
+    width: 100%;
+    
+}
+.chat-messages
+{
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0.2rem;
+    padding: 0.2rem;
+    
+    overflow: auto;
+}
+.message
+{display: flex;
+    margin: 0.3rem;
+    border: 0.08rem solid rgb(49, 49, 83);
+}
+.message-text{
+    font-family: monospace;
+    color: rgb(104, 52, 33);
+    font-size: 1.2rem;
+}
+.ulnav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ulnav li {
+    padding: 0 0.5rem;
+    
+}
+nav{
+    display: flex;
+}
+.sendForm{
+    display: flex;
+    width: 98%;
+    
+
+}
+.message-input{
+    flex-grow: 1;
+    width: auto;
+    
+}

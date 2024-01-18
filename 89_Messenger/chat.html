@@ -1,82 +1,50 @@
 <!DOCTYPE html>
-<html lang = "en">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name = "viewport" content = "width=device-width">
-    <title>Linktree</title>   
-    <link href="" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oldschool Chat messenger</title>
+    <link href="./static/css/chat2.css" rel="stylesheet" type="text/css"/>
 </head>
-
-<style>
-    body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-.top-banner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to bottom, lightblue, white);
-    padding: 10px;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.navigation a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: black;
-}
-
-.search-bar {
-    display: flex;
-}
-
-.search-bar input {
-    border: 1px solid #ddd;
-    padding: 5px;
-    margin-right: 5px;
-}
-
-.search-bar button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-</style>
-
 <body>
+    <div class="chat-containter">
+        
+        <header class="chat-header">
+            <a href="http://192.168.1.102:5500/89_Messenger/chat.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path fill="blue" d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg> 
+            </a>
+            Oldschool Chat Messenger
+            <nav>
+                <ul class="ulnav">
+                    <li class="current"><a href="/index">Home</a></li>
+                    <li><a href="/reset">About</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/reset">Logout</a></li>
+                    <li>{guest}</li>
+                </ul>
+            </nav>
+        </header>
 
-    <div class="top-banner">
-        <div class="logo">Logo</div>
-        <div class="navigation">
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+        <div class="chat-messages">
+            
+            {messageBlock}
+            
+            <!--<div class="message">
+                <span>{timestamp}{user}:</span>
+            {message}
+            </div>
+        -->
+            <div></div>
+          
+            
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search...">
-            <button>🔍</button>
-        </div>
-
-</div>
-
-
-
-    <div>
-    <form action="/push" method="post">
-    <p>message:<input type="text" name="message_input" id="name"></p>
-    <button type="submit">Go!</button>
-    <button type = "button"
-        onclick="location.href = '/reset'">Reset</button>
+        
+            
+        <footer class="chat-footer">
+            <form class="sendForm" action="/send" method="post">
+            <input type="text" placeholder="Enter message" name="message-input" required>
+            <button id="send-button">Send</button></form>
+        </footer>
     </div>
-
-</form>
-    
 </body>
+</html>
