@@ -32,6 +32,7 @@ def search():
     f.close()
     form = request.form
     year = form['jaar']
+    #spotauth
     url = 'https://accounts.spotify.com/api/token'
     data = {'grant_type' : 'client_credentials'}
     auth = HTTPBasicAuth(clientID, secretID)
